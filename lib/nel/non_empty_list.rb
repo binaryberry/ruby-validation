@@ -9,10 +9,10 @@ class NonEmptyList
   def prepend(element)
   end
 
-  def append_all(element)
+  def append_all(*elements)
   end
 
-  def prepend_all(element)
+  def prepend_all(*elements)
   end
 
   def to_a
