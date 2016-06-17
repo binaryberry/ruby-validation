@@ -25,16 +25,21 @@ It is probably best to address the tests in the order they appear in each suite 
 Pay close attention to the api comments, especially if you are unsure what you need to do.
 The motivation for some of the api may become only be apparent in later tasks.
 
+If you prefer to change the suggested api to be more suited to your preferences, please go ahead!
+But try to preserve the restrictions defined by the tests, as well as the functionality.
+
 Once the tests are passing (congratulations!) you may wish to consider any of the following questions as a starting point for discussion:
 
 1. We haven't implemented equality for Validation. Would this be a useful or sensible addition? Why?
 
 2. We haven't implemented anything along the lines of `def get()` to return the value held by the Validation. Why not?
 
-3. You may have found ways of implementing parts of the api in terms of other parts. What is the minimum api surface necessary to implement the Validation api thus far? Are there any patterns or further abstractions you can see? Could any of this minimal functionality be further generalised? If not, why not?
+3. Some of the api or implementation may not by very idiomatic for Ruby. Can you identify any similarities with functions already in the Ruby standard library? Are there any things you would like to rename?
 
-4. Surely there must some things about the design of what we have so far that could be improved. Can you identify anything? If so, can you change the design, keep the current tests working, and add any additional tests we need?
+4. You may have found ways of implementing parts of the api in terms of other parts. What is the minimum api surface necessary to implement the Validation api thus far? Are there any patterns or further abstractions you can see? Could any of this minimal functionality be further generalised? If not, why not?
 
-5. We've implemented and done some basic testing of a powerful but pretty small api. Can you think of any more specialised (but still domain-agnostic) functionality you would like to use that can be derived from what we've seen so far?
+5. Surely there must some things about the design of what we have so far that could be improved. Can you identify anything? If so, can you change the design, keep the current tests working, and add any additional tests we need?
 
-6. We've implemented some varargs functions which can handle any argument arity. If you are familiar with a language which provides a compile-time type system, would it be capable of implementing this functionality in a type-safe way?
+6. We've implemented and done some basic testing of a powerful but pretty small api. Can you think of any more specialised (but still domain-agnostic) functionality you would like to use that can be derived from what we've seen so far?
+
+7. We've implemented some varargs functions which can handle any argument arity. If you are familiar with a language which provides a compile-time type system, would it be capable of implementing this functionality in a type-safe way?
