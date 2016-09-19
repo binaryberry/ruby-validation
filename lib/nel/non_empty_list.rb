@@ -4,6 +4,14 @@ class NonEmptyList
     raise "not implemented"
   end
 
+  def head
+    raise "not implemented"
+  end
+
+  def tail
+    raise "not implemented"
+  end
+
   def append(element)
     raise "not implemented"
   end
