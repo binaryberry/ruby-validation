@@ -35,4 +35,12 @@ class Validation
   def fold(if_failure, if_success)
     raise "not implemented"
   end
+
+  def map(if_success)
+    raise "not implemented"
+  end
+
+  def flat_map(if_success)
+    raise "not implemented"
+  end
 end
