@@ -35,7 +35,7 @@ RSpec.describe Validation do
     vs = [Validation.failure("boo"), Validation.success("b"), Validation.failure("oh noes", "not again")]
     sequenced = Validation.sequence(vs)
 
-    expect(sequenced).to be_failure_of(["boo", "oh noes", "not again"])
+    expect(sequenced).to be_failure_of("boo", "oh noes", "not again")
   end
 
   it "should traverse list of success validations" do
@@ -49,7 +49,7 @@ RSpec.describe Validation do
     vs = [Validation.failure("boo"), Validation.success("b"), Validation.failure("oh noes", "not again")]
     traversed = Validation.traverse(vs) { fail "shouldn't need to call this" }
 
-    expect(traversed).to be_failure_of(["boo", "oh noes", "not again"])
+    expect(traversed).to be_failure_of("boo", "oh noes", "not again")
   end
 
   it "should transform several successful validations with mapN" do
