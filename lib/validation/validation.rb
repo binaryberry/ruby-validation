@@ -31,4 +31,8 @@ class Validation
   def or_else(default_validation)
     raise "not implemented"
   end
+
+  def fold(if_failure, if_success)
+    raise "not implemented"
+  end
 end
