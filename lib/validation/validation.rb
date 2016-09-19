@@ -16,6 +16,14 @@ class Validation
 
   # interface below here
 
+  def is_success?
+    raise "not implemented"
+  end
+
+  def is_failure?
+    raise "not implemented"
+  end
+  
   def get_or_else(default_value)
     raise "not implemented"
   end

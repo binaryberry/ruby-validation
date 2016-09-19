@@ -3,7 +3,7 @@ require 'validation/validation'
 
 RSpec.describe Validation do
   it "should hint that it shouldn't be extended" do
-    expect { Validation.new }.to raise_error
+    expect { Validation.new }.to raise_error RuntimeError
   end
 
   it "should provide a factory method for success values" do
@@ -26,13 +26,13 @@ RSpec.describe Validation do
   end
 
   it "should fail when factory methods are called with invalid parameters" do
-    expect { Validation.success }.to raise_error
-    expect { Validation.success(nil) }.to raise_error
-    expect { Validation.success("a", "b") }.to raise_error
+    expect { Validation.success }.to raise_error ArgumentError
+    expect { Validation.success(nil) }.to raise_error RuntimeError
+    expect { Validation.success("a", "b") }.to raise_error ArgumentError
 
-    expect { Validation.failure }.to raise_error
-    expect { Validation.failure(nil) }.to raise_error
-    expect { Validation.success("a", nil, "b") }.to raise_error
+    expect { Validation.failure }.to raise_error ArgumentError
+    expect { Validation.failure(nil) }.to raise_error RuntimeError
+    expect { Validation.failure("a", nil, "b") }.to raise_error RuntimeError
   end
 
   it "should retrieve success value from success" do
@@ -50,13 +50,13 @@ RSpec.describe Validation do
   end
 
   it "should retrieve self from success validation" do
-    v = Validation.success(value)
+    v = Validation.success("yay")
     retrieved_validation = v.or_else(lambda { fail "shouldn't need to call this" })
     expect(retrieved_validation).to be v
   end
 
   it "should retrieve default validation from failure validation" do
-    default_validation = Validaton.success("foo")
+    default_validation = Validation.success("foo")
     v = Validation.failure("boo")
     retrieved_validation = v.or_else(lambda { default_validation })
     expect(retrieved_validation).to be default_validation
