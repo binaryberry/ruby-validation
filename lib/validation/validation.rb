@@ -13,7 +13,6 @@ class Validation
     raise "not implemented"
   end
 
-
   # interface below here
 
   def is_success?
@@ -36,11 +35,27 @@ class Validation
     raise "not implemented"
   end
 
-  def map(if_success)
+  def map(&if_success)
     raise "not implemented"
   end
 
-  def flat_map(if_success)
+  def flat_map(&if_success)
+    raise "not implemented"
+  end
+
+  def apply(applicable_validation)
+    raise "not implemented"
+  end
+
+  def self.sequence(validations)
+    raise "not implemented"
+  end
+
+  def self.traverse(validations, &block)
+    raise "not implemented"
+  end
+
+  def self.mapN(validations, &block)
     raise "not implemented"
   end
 end
