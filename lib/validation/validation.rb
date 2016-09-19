@@ -9,7 +9,7 @@ class Validation
     raise "not implemented"
   end
 
-  def self.failure(error)
+  def self.failure(error, *other_errors)
     raise "not implemented"
   end
 
